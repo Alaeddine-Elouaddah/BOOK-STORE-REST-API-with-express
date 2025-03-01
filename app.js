@@ -11,7 +11,7 @@ const books  = [
 
 const server = http.createServer((req , res) => {
    if(req.url === '/'){
-     res.write("<h1> Inchaalah Expern In Mern Stack   </h1> " ) ;   
+     res.write("<h1> Inchaalah Expert In Mern Stack   </h1> " ) ;   
      res.end() ;      
     } 
     else if(req.url === '/api/books'){
@@ -19,10 +19,10 @@ const server = http.createServer((req , res) => {
        res.end() ; 
     }
     else{
-         res.write("<h1>Page note Found   </h1>") ; 
+         res.write("<h1>Page not Found   </h1>") ; 
+         res.end() ; 
     }
-    
-
 }) ; 
+ 
 const PORT = 5000; 
 server.listen(PORT, () => console.log(`Server is runnig on port ${PORT}`) ) ; 
