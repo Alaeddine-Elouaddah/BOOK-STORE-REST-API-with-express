@@ -18,6 +18,10 @@ const server = http.createServer((req , res) => {
        res.write(JSON.stringify(books)) ; 
        res.end() ; 
     }
+    else if (req.url === '/api/books/:id'){
+        res.write("<h1>Id Not Found </h1>") ;
+        res.end() ;  
+    }
     else{
          res.write("<h1>Page not Found   </h1>") ; 
          res.end() ; 
