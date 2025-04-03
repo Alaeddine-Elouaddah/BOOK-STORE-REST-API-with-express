@@ -1,15 +1,27 @@
 {
-  "name": "nodejs-demo",
+  "name": "book-store-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "book store backend ",
+  "homepage": "https://github.com/Alaeddine-Elouaddah/NodeJs-Express-Training#readme",
+  "bugs": {
+    "url": "https://github.com/Alaeddine-Elouaddah/NodeJs-Express-Training/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alaeddine-Elouaddah/NodeJs-Express-Training.git"
+  },
   "license": "ISC",
-  "author": "Alaeddine",
+  "author": "Alaeddine Elouaddah",
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "joi": "^17.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
