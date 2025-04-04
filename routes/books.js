@@ -9,7 +9,11 @@ const { Author } = require('../models/Author');
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const books = await Book.find().populate('author');
+    const books = await Book.find().populate('author', [
+      '_id',
+      'firstName',
+      'lastName',
+    ]);
     res.json(books);
   })
 );
@@ -18,7 +22,11 @@ router.get(
 router.get(
   '/:id',
   asyncHandler(async (req, res) => {
-    const book = await Book.findById(req.params.id).populate('author');
+    const book = await Book.findById(req.params.id).populate('author', [
+      '_id',
+      'firstName',
+      'lastName',
+    ]);
     if (book) {
       res.json(book);
     } else {
