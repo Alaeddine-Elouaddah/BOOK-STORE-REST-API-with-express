@@ -1,20 +1,37 @@
-const { string, required } = require('joi');
 const mongoose = require('mongoose');
-const bookSchema = mongoose.Schema(
+
+const bookSchema = new mongoose.Schema(
   {
     title: {
-      type: string,
+      type: String, // ❌ tu avais `string` au lieu de `String`
       required: true,
       minlength: 3,
       maxlength: 20,
+      trim: true,
     },
-    description: {},
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'Author',
+    },
+    description: {
+      // ❌ il y avait une faute : "desccription"
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    cover: {
+      type: String,
+      required: true,
+      enum: ['soft cover', 'hard cover'],
+    },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
+
 const Book = mongoose.model('Book', bookSchema);
-module.exports = {
-  Book,
-};
+module.exports = { Book };
