@@ -13,4 +13,4 @@ function verifyToken(req, res, next) {
     res.status(401).json({ message: 'no token provided' });
   }
 }
-module.exports = verifyToken;
+module.exports = { verifyToken };

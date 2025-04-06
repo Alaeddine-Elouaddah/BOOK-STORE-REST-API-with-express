@@ -15,11 +15,17 @@ router.put(
   '/:id',
   verifyToken,
   asyncHandler(async (req, res) => {
+    if (req.user.id !== req.params.id) {
+      return res
+        .status(403) //forbidden
+        .json({
+          message: 'You are not allowed , you cam only update ur profile',
+        });
+    }
     const { error } = validateUpdateUser(req.body);
     if (error) {
       return res.status(400).json({ mssage: error.details[0].message });
     }
-    console.log(req.headers);
     if (req.body.password) {
       const salt = await bcrypt.genSalt(10);
       req.body.password = await bcrypt.hash(req.body.password, salt);
