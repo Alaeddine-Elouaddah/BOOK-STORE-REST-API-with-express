@@ -19,14 +19,23 @@ router.get(
 );
 
 // GET BOOK BY ID
+
 router.get(
   '/:id',
   asyncHandler(async (req, res) => {
-    const book = await Book.findById(req.params.id).populate('author', [
+    const { id } = req.params;
+
+    // Vérifie si l'ID est un ObjectId valide
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid book ID format' });
+    }
+
+    const book = await Book.findById(id).populate('author', [
       '_id',
       'firstName',
       'lastName',
     ]);
+
     if (book) {
       res.json(book);
     } else {
