@@ -2,12 +2,15 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 const {
   validateRegisterUser,
   User,
   validateLoginUser,
 } = require('../models/User');
-const bcrypt = require('bcryptjs');
+
 /**
  * @desc Register New User
  * @metod POST
@@ -34,7 +37,13 @@ router.post(
       isAdmin: req.body.isAdmin,
     });
     const resultat = await user.save();
-    const token = null;
+    const token = jwt.sign(
+      { id: user._id, isAdmin: user.isAdmin },
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn: '4h',
+      }
+    );
     const { password, ...other } = resultat._doc;
     res.status(201).json({ ...other, token });
   })
@@ -63,7 +72,14 @@ router.post(
     if (!isPasswordMatch) {
       return res.status(400).json({ message: 'Invalid email or password ' });
     }
-    const token = null;
+
+    const token = jwt.sign(
+      { id: user._id, isAdmin: user.isAdmin },
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn: '4h',
+      }
+    );
     const { password, ...other } = user._doc;
     res.status(200).json({ ...other, token });
   })

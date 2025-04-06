@@ -19,9 +19,13 @@ app.use(logger);
 const booksPath = require('./routes/books');
 const authorPath = require('./routes/authors');
 const authPath = require('./routes/auth');
+const usersPath = require('./routes/users');
+//Routes
 app.use('/api/books', booksPath);
 app.use('/api/authors', authorPath);
 app.use('/api/auth', authPath);
-app.use(notFound);
+app.use('/api/users', usersPath);
 // Error Handler Middlaware
+app.use(notFound);
+
 app.use(errorHandler);
