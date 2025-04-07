@@ -4,6 +4,7 @@ const Joi = require('joi');
 const asyncHandler = require('express-async-handler');
 const { Book } = require('../models/Book');
 const { Author } = require('../models/Author');
+const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 
 // GET ALL BOOKS
 router.get(
@@ -47,6 +48,7 @@ router.get(
 // CREATE BOOK
 router.post(
   '/',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
     const schema = Joi.object({
       title: Joi.string().min(3).max(20).required(),
@@ -73,6 +75,7 @@ router.post(
 // UPDATE BOOK
 router.put(
   '/:id',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
     const schema = Joi.object({
       title: Joi.string().min(3).max(20),
@@ -101,6 +104,7 @@ router.put(
 // DELETE BOOK
 router.delete(
   '/:id',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
     const deletedBook = await Book.findByIdAndDelete(req.params.id);
     if (!deletedBook)

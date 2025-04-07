@@ -4,6 +4,7 @@ router.use(express.json());
 const Joi = require('joi');
 const { Author } = require('../models/Author');
 const asyncHandler = require('express-async-handler');
+const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 
 /**
  * @desc GET ALL AUTHORS
@@ -37,13 +38,14 @@ router.get(
   })
 );
 /**
- * @desc  CREATE NEW BOOK
+ * @desc  CREATE NEW AUTHOR
  * @router api/authors
  * @method POST
- * @access public
+ * @access private (only admin )
  */
 router.post(
   '/',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
     // Définition du schéma de validation
     const schema = Joi.object({
@@ -118,10 +120,11 @@ router.put(
  * @desc DELETE AUTHOR BY ID
  * @route /api/authors:id
  * @method DELETE
- * @access public
+ * @access private
  */
 router.delete(
   '/:id',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
     const author = await Author.findById(req.params.id);
     if (author) {

@@ -4,12 +4,10 @@ const mongoose = require('mongoose');
 const env = require('dotenv');
 const logger = require('./middlewares/logger');
 const { notFound, errorHandler } = require('./middlewares/errors');
+const connectToMongoDb = require('./config/db');
 
 env.config();
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log('Connected To MongoDb !'))
-  .catch(() => console.log('Connection failed to MongoDb', error));
+connectToMongoDb();
 // const PORT = process.env.PORT on peut faire || 87544 ;
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server is runnig on PORT ${PORT}`));
