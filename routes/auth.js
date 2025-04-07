@@ -10,6 +10,8 @@ const {
   User,
   validateLoginUser,
 } = require('../models/User');
+const { assert } = require('joi');
+const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 
 /**
  * @desc Register New User
@@ -84,4 +86,5 @@ router.post(
     res.status(200).json({ ...other, token });
   })
 );
+
 module.exports = router;

@@ -3,7 +3,11 @@ const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { User, validateUpdateUser } = require('../models/User');
-const { verifyToken } = require('../middlewares/verifyToken');
+const {
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require('../middlewares/verifyToken');
 /**
  *@desc UPdate USer
  *@route /api/users/:id
@@ -13,15 +17,8 @@ const { verifyToken } = require('../middlewares/verifyToken');
 
 router.put(
   '/:id',
-  verifyToken,
+  verifyTokenAndAuthorization,
   asyncHandler(async (req, res) => {
-    if (req.user.id !== req.params.id) {
-      return res
-        .status(403) //forbidden
-        .json({
-          message: 'You are not allowed , you cam only update ur profile',
-        });
-    }
     const { error } = validateUpdateUser(req.body);
     if (error) {
       return res.status(400).json({ mssage: error.details[0].message });
@@ -44,11 +41,55 @@ router.put(
     res.status(200).json(updateUser);
   })
 );
+/**
+ * @desc GET ALL USERS
+ * @route /api/users
+ * @method GET
+ * @acces private (only admin)
+ */
 router.get(
   '/',
+  verifyTokenAndAdmin,
   asyncHandler(async (req, res) => {
-    const user = await User.find();
+    const user = await User.find().select('-password');
     res.status(200).json(user);
+  })
+);
+/**
+ * @desc GET User By Id
+ * @route /api/users/id
+ * @method GET
+ * @acces private (only admin & and user Him self  )
+ */
+router.get(
+  '/:id',
+  verifyTokenAndAuthorization,
+  asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id).select('-password');
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: 'User not Found ' });
+    }
+  })
+);
+/**
+ * @desc Delete  User By Id
+ * @route /api/users/id
+ * @method DELETE
+ * @acces private (only admin & and user Him self  )
+ */
+router.delete(
+  '/:id',
+  verifyTokenAndAuthorization,
+  asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id).select('-password');
+    if (user) {
+      await User.findByIdAndDelete(req.params.id);
+      res.status(200).json({ message: 'User has been  deleted by succes ' });
+    } else {
+      res.status(404).json({ message: 'User not found ' });
+    }
   })
 );
 module.exports = router;
