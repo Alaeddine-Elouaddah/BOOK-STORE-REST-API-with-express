@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose'); // Make sure this line is present
+
 router.use(express.json());
 const Joi = require('joi');
 const { Author } = require('../models/Author');
@@ -16,7 +18,11 @@ const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const authors = await Author.find();
+    const { pageNumber } = req.query;
+    const authorPerPage = 2;
+    const authors = await Author.find()
+      .skip((pageNumber - 1) * 2)
+      .limit(authorPerPage);
     res.status(200).json(authors);
   })
 );
