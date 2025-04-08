@@ -10,12 +10,29 @@ const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const books = await Book.find().populate('author', [
-      '_id',
-      'firstName',
-      'lastName',
-    ]);
-    res.json(books);
+    //  Comparison Query Operators:
+    // {$eq: 10}   ==> means "equal to 10"
+    // {$ne: 10}   ==> means "not equal to 10"
+    // {$lt: 10}   ==> means "less than 10"
+    // {$lte: 10}  ==> means "less than or equal to 10"
+    // {$gt: 10}   ==> means "greater than 10"
+    // {$gte: 10}  ==> means "greater than or equal to 10"
+    // {$in: [value1, value2, ...]} ==> means "matches any value in the given array of values"
+    // {$nin: [value1, value2, ...]} ==> means "does not match any value in the given array of values"
+    const { minPrice, maxPrice } = req.query;
+    let books;
+    if (minPrice && maxPrice) {
+      books = await Book.find({
+        price: { $lt: minPrice, $gt: maxPrice },
+      }).populate('author', ['_id', 'userName', 'lastName']);
+    } else {
+      books = await Book.find().populate('author', [
+        '_id',
+        'userName',
+        'lastName',
+      ]);
+    }
+    res.status(200).json(books);
   })
 );
 
@@ -38,7 +55,7 @@ router.get(
     ]);
 
     if (book) {
-      res.json(book);
+      res.status(200).json(book);
     } else {
       res.status(404).json({ message: 'Book not found' });
     }
