@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getForgotPassword,
-  sendForgotPasswordLink,
-  getResetPasswordView,
-  resetThePassword,
+  getForgotPasswordView, // Changed from getForgotPassword to getForgotPasswordView
+  sendForgotPasswordLink, // This one is correct
+  getResetPasswordView, // This one is correct
+  resetThePassword, // This one is correct
 } = require('../controllers/passwordController');
+
 router
   .route('/forgot-password')
-  .get(getForgotPassword)
+  .get(getForgotPasswordView) // Changed from getForgotPassword to getForgotPasswordView
   .post(sendForgotPasswordLink);
-// password / reset password:
+
 router
   .route('/password/reset-password/:userId/:token')
   .get(getResetPasswordView)
