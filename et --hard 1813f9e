@@ -1,0 +1,155 @@
+[33mcommit 722fc91b4d5fe1fc40485a9e34ebe3937f3a1653[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Fri Apr 11 11:09:35 2025 +0100
+
+    ss
+
+[33mcommit 1813f9eb6214835af0243013c24e9ea60b899ea3[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Wed Apr 9 23:09:38 2025 +0100
+
+    Reset Password
+
+[33mcommit bdb0643af2bb7b4b96f004f7b382692bae9ca340[m[33m ([m[1;32mnouvelle-branche[m[33m)[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Wed Apr 9 00:22:52 2025 +0100
+
+    MVC
+
+[33mcommit 6b39597de8c52088944a4911b9a594207346554c[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Tue Apr 8 20:50:45 2025 +0100
+
+    Controllers
+
+[33mcommit 209eb173929f0e1be6020a723b67d4a1171d654a[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Tue Apr 8 15:45:32 2025 +0100
+
+    Paginatio
+
+[33mcommit 2673a14df061af671822f77c694cfbfabd2db082[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Tue Apr 8 13:32:50 2025 +0100
+
+    Paginatio
+
+[33mcommit a64a0471b537167422feef67d888ac6ad55c2969[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Mon Apr 7 23:12:11 2025 +0100
+
+    Authorization
+
+[33mcommit 2786e90a9c18945ab2f6a1662905ebb6e04f908c[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Mon Apr 7 22:57:15 2025 +0100
+
+    Authorization
+
+[33mcommit 533fd4a361650d31e9751b3cc1f0c14705174f80[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Mon Apr 7 22:55:07 2025 +0100
+
+    tst
+
+[33mcommit a56de913db82ae75c931090168dcf49ee1a8193e[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Mon Apr 7 18:49:34 2025 +0100
+
+    FUCK
+
+[33mcommit 9e0e5eaf2e62c91bc791ef62d0165bb5f83710f0[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sun Apr 6 23:37:04 2025 +0100
+
+    Authorization
+
+[33mcommit b002fd5a8bc12f81823bf2d843709a49ac2db740[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sun Apr 6 23:13:17 2025 +0100
+
+    JWT
+
+[33mcommit 3ba0d56c3705382b5f81d6cf495cf1445e895378[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sun Apr 6 11:08:02 2025 +0100
+
+    LOGIN AND REGISTER
+
+[33mcommit b409a85715e1e46690a0d1ef6ebc4bc0b4a9fa11[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Fri Apr 4 20:53:39 2025 +0000
+
+    Ignore node_modules
+
+[33mcommit 02f6aebdf07389f815c94a97a660ca6bccc1b5bb[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Fri Apr 4 20:11:47 2025 +0000
+
+    AsyncHandler
+
+[33mcommit 30b0ad048467d33ffe616d420925b74730c514ad[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Fri Apr 4 19:28:12 2025 +0000
+
+    mongosj
+
+[33mcommit 7d5ef1fc211461bd934d7981fe7a1386f53c101d[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Fri Apr 4 12:44:37 2025 +0000
+
+    mongos
+
+[33mcommit 57b6cf40c51b95a00b9da596d275090445c52b8a[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Thu Apr 3 21:18:15 2025 +0000
+
+    Mise à jour
+
+[33mcommit 14df8ce70098b4e5537eae9cd7fdd4fc18b85768[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Thu Apr 3 18:08:38 2025 +0000
+
+    Joi
+
+[33mcommit b206c49794f8937886d9c731113858fff9d8aba2[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sun Mar 2 12:37:15 2025 +0000
+
+    Initial commit du backend Express
+
+[33mcommit c46566415ef4bf6469b7e342499f1dc4a5e0bd93[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Thu Apr 3 10:54:50 2025 +0000
+
+    Correction des conflits
+
+[33mcommit 7fa36d46114178c434cc3199a243153454689d79[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sat Mar 1 23:33:32 2025 +0000
+
+    Ton message de commit
+
+[33mcommit b830ba353cb5c5771bffdb21da23a9e43d29b614[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sat Mar 1 23:11:25 2025 +0000
+
+    Ton message de commit
+
+[33mcommit 49e59058207fc671e0c4a28ce7fa572d614f89c1[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Sun Mar 2 00:06:20 2025 +0100
+
+    Ton message de commit
+
+[33mcommit 5b37e895fc46d998f488acc0427638499b93714e[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Thu Feb 27 21:35:42 2025 +0100
+
+    EXPRESS
+
+[33mcommit da3e99ea37b3081ec173e3df282f1ee581fc777b[m
+Author: Alaeddine-Elouaddah <166127907+Alaeddine-Elouaddah@users.noreply.github.com>
+Date:   Thu Feb 27 21:33:19 2025 +0100
+
+    Initial commit
