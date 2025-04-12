@@ -19,7 +19,26 @@ Elle intègre également un système de **réinitialisation de mot de passe par 
 - 🛡️ Sécurité via `.env`, headers, et tokens
 
 ---
+## 🧪 Technologies utilisées
+```bash
+Node.js
 
+Express
+
+MongoDB avec Mongoose
+
+Joi (validation)
+
+JSON Web Token (JWT)
+
+Nodemailer (email)
+
+EJS (vues dynamiques)
+
+Postman
+
+Nodemon
+```
 ## 📦 Installation
 
 ```bash
