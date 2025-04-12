@@ -26,8 +26,9 @@ Elle intègre également un système de **réinitialisation de mot de passe par 
 git clone https://github.com/Alaeddine-Elouaddah/BOOK-STORE-REST-API-with-express.git
 cd BOOK-STORE-REST-API-with-express
 npm install
-
-🙋‍♂️ Auteur
+```
+## 🙋‍♂️ Auteur
+ ```bash
 💻 Développé par : Alaeddine Elouaddah
 
 📧 Email : alaeddineelouaddah09@gmail.com
